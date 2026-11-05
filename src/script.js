@@ -1,5 +1,19 @@
 /* SPARK site interactions */
 (function(){
+  /* dismissable announcement bar — remembers the choice */
+  var topbar=document.getElementById('topbar'),closeBtn=document.querySelector('.topbar-close');
+  if(topbar&&closeBtn){closeBtn.addEventListener('click',function(){
+    try{localStorage.setItem('spark-topbar','off')}catch(e){}
+    topbar.style.maxHeight=topbar.offsetHeight+'px';
+    topbar.style.overflow='hidden';
+    requestAnimationFrame(function(){
+      topbar.style.transition='max-height .35s ease,opacity .3s ease,padding .35s ease';
+      topbar.style.maxHeight='0';topbar.style.opacity='0';
+      topbar.style.paddingTop='0';topbar.style.paddingBottom='0';
+    });
+    setTimeout(function(){topbar.style.display='none'},380);
+  });}
+
   var header=document.querySelector('header.site');
   if(header){addEventListener('scroll',function(){header.classList.toggle('scrolled',scrollY>10)},{passive:true});}
 
@@ -143,28 +157,6 @@
       requestAnimationFrame(draw);
     })();
   }
-
-  /* terminal typer */
-  var typer = document.getElementById('typer');
-  if (typer && !reduced) {
-    var cmds = [
-      'master --skill="AI Automation"',
-      'launch --campaign="Meta Ads"',
-      'deploy --store="Shopify"',
-      'rank --keyword="SEO"',
-      'build --site="WordPress"',
-      'backtest --strategy="Trading"'
-    ], ci = 0, pos = 0, del = false;
-    (function tick(){
-      var c = cmds[ci];
-      typer.textContent = c.slice(0, pos);
-      var wait = del ? 28 : 62;
-      if (!del && pos === c.length) { wait = 1600; del = true; }
-      else if (del && pos === 0) { del = false; ci = (ci+1)%cmds.length; wait = 350; }
-      else pos += del ? -1 : 1;
-      setTimeout(tick, wait);
-    })();
-  } else if (typer) { typer.textContent = 'master --skill="AI Automation"'; }
 
   /* course category filter */
   var fbar = document.querySelector('.filter-bar');

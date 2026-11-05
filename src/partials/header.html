@@ -1,10 +1,14 @@
 <!-- ======= TOPBAR ======= -->
-<div class="topbar">
+<div class="topbar" id="topbar">
   <div class="container">
     <span><span class="dot"></span>Admissions open<span class="hide-m"> — limited seats per batch for personal attention</span></span>
-    <a class="cta" href="contact.html">Book a Free Career Session</a>
+    <span class="topbar-right">
+      <a class="cta" href="contact.html">Book a Free Career Session</a>
+      <button class="topbar-close" type="button" aria-label="Dismiss announcement">&times;</button>
+    </span>
   </div>
 </div>
+<script>try{if(localStorage.getItem('spark-topbar')==='off'){document.getElementById('topbar').style.display='none'}}catch(e){}</script>
 
 <!-- ======= HEADER ======= -->
 <header class="site">
