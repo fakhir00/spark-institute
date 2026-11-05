@@ -27,6 +27,7 @@ IMAGES = {
     "seo":       "media-generation-course-seo-0-46c6f662-3cd4-442f-ad8b-67a301686f9f.jpg",
     "logo":      "spark-wordmark.png",
     "favicon":   "spark-favicon.png",
+    "lockup":    "spark-lockup.png",
 }
 
 PAGES = {
@@ -43,17 +44,31 @@ CARD_W = 880
 QUALITY = 68
 
 
-def data_uri(path):
+def data_uri(path, key=""):
     from PIL import Image
-    if path.lower().endswith(".png"):
-        # keep PNG (transparency) for logos/marks; 480px is plenty for a
-        # header logo displayed ~90px wide, and keeps the page light
+    if path.lower().endswith(".png") and key == "favicon":
+        # favicon keeps PNG (transparency) — it's tiny
         im = Image.open(path).convert("RGBA")
         if im.width > 480:
             im = im.resize((480, int(im.height * 480 / im.width)), Image.LANCZOS)
         buf = io.BytesIO()
         im.save(buf, "PNG", optimize=True)
         return "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode("ascii")
+    if path.lower().endswith(".png"):
+        # transparent logo PNGs: flatten onto the site's dark background.
+        # Header/footer are solid #0b0e14, so JPEG blends seamlessly and
+        # is far smaller than a transparent PNG (the lockup PNG was 299 KB
+        # and is inlined in all 7 footers — it pushed the push over the
+        # size limit). q80 keeps the lettering crisp.
+        im = Image.open(path).convert("RGBA")
+        if im.width > 480:
+            im = im.resize((480, int(im.height * 480 / im.width)), Image.LANCZOS)
+        bg = Image.new("RGBA", im.size, (11, 14, 20, 255))
+        bg.alpha_composite(im)
+        im = bg.convert("RGB")
+        buf = io.BytesIO()
+        im.save(buf, "JPEG", quality=80, optimize=True, progressive=True)
+        return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode("ascii")
     im = Image.open(path).convert("RGB")
     if im.width > CARD_W:
         im = im.resize((CARD_W, int(im.height * CARD_W / im.width)), Image.LANCZOS)
@@ -83,7 +98,7 @@ def main():
     for key, fname in IMAGES.items():
         src = os.path.join(ASSETS, fname)
         if os.path.exists(src):
-            uris[key] = data_uri(src)
+            uris[key] = data_uri(src, key)
         elif key in cache:
             uris[key] = cache[key]
         else:
