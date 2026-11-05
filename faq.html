@@ -9,7 +9,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f5a524'/%3E%3Cpath d='M17.5 5 8 18h6l-1.5 9L22 14h-6l1.5-9z' fill='%230b0e14'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <style>/* SPARK — School of Practical AI & Real Knowledge */
 :root{
   --primary:#3a1483;
@@ -644,6 +644,42 @@ footer.site{background-color:#0b0e14;color:#9aa3b2;background-image:linear-gradi
    hero column wider than the viewport on phones */
 .hero-grid>div{min-width:0}
 #typer{text-overflow:ellipsis}
+
+/* ============ HANDMADE — de-templated ============
+   Film grain, handwritten margin notes, a hand-drawn underline,
+   slightly crooked photos and staggered steps. The point is that
+   a person placed these things, not a template. */
+body::after{content:"";position:fixed;inset:0;z-index:300;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E")}
+/* handwritten margin notes */
+.hand-note{font-family:'Caveat',cursive;font-size:25px;font-weight:700;color:#f5a524;transform:rotate(-1.5deg);margin-top:20px;line-height:1.2}
+.hand-note.center{text-align:center}
+/* hand-drawn squiggle under the hero's gold words */
+.hero h1 .hl{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8 Q 12 2 22 7 T 42 7 T 62 7 T 82 7 T 102 7 T 118 7' fill='none' stroke='%23f5a524' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") bottom left/100% 10px no-repeat;padding-bottom:10px}
+/* photos placed slightly crooked, like prints on a desk */
+.hero-art .frame{transform:rotate(.8deg)}
+.about-art img{transform:rotate(-.6deg)}
+.about-art:hover img{transform:rotate(-.6deg) scale(1.03)}
+/* classroom strip */
+.class-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.class-strip figure{margin:0;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#12161f;transition:transform .25s,box-shadow .25s}
+.class-strip figure:nth-child(2){transform:rotate(.7deg)}
+.class-strip figure:nth-child(3){transform:rotate(-.6deg)}
+.class-strip figure:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:var(--glow)}
+.class-strip figure:nth-child(2):hover{transform:translateY(-6px) rotate(.7deg)}
+.class-strip figure:nth-child(3):hover{transform:translateY(-6px) rotate(-.6deg)}
+.class-strip img{width:100%;height:230px;object-fit:cover;filter:saturate(.92) contrast(1.02)}
+.class-strip figcaption{padding:16px 20px;font-size:14.5px;font-weight:600;color:var(--ink)}
+.class-strip figcaption::before{content:"— ";color:var(--primary)}
+/* warm, consistent photo treatment on course covers */
+.ccard .thumb img{filter:saturate(.95)}
+/* method steps: staggered, not a perfect row */
+.steps .step:nth-child(2),.steps .step:nth-child(4){margin-top:20px}
+@media(max-width:1020px){
+  .steps .step:nth-child(2),.steps .step:nth-child(4){margin-top:0}
+  .class-strip{grid-template-columns:1fr}
+  .class-strip img{height:210px}
+}
+@media (prefers-reduced-motion:reduce){.hand-note{transform:none}}
 </style>
 </head>
 <body><!-- ======= TOPBAR ======= -->
@@ -755,7 +791,7 @@ footer.site{background-color:#0b0e14;color:#9aa3b2;background-image:linear-gradi
     </div>
     <div class="f-bottom">
       <span>© 2026 SPARK — School of Practical AI &amp; Real Knowledge. All rights reserved.</span>
-      <span>Learn. Build. Apply.</span>
+      <span>Photography: Unsplash &nbsp;·&nbsp; Learn. Build. Apply.</span>
     </div>
   </div>
 </footer>

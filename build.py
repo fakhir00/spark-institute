@@ -13,6 +13,11 @@ SRC = os.path.join(ROOT, "src")
 ASSETS = os.path.join(ROOT, "assets-src")
 
 IMAGES = {
+    "hero":      "unsplash-hero-students-1522202176988.jpg",
+    "about":     "unsplash-about-workshop-1517245386807.jpg",
+    "classa":    "unsplash-class-students-1523240795612.jpg",
+    "classb":    "unsplash-class-collab-1531482615713.jpg",
+    "classc":    "unsplash-class-team-1522071820081.jpg",
     "meta":      "media-generation-course-meta-ads-0-225622cd-1924-4b1b-898f-e2f442f2c211.jpg",
     "googleads": "media-generation-course-google-ads-0-e743a56a-9e89-4b27-838a-2be0574409e1.jpg",
     "trading":   "media-generation-course-trading-0-ed0ac00e-6d92-403e-a065-4958f2c5b696.jpg",
