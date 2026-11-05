@@ -1,9 +1,8 @@
 /* SPARK site interactions */
 (function(){
-  /* dismissable announcement bar — remembers the choice */
+  /* dismissable announcement bar — closes for this page view only */
   var topbar=document.getElementById('topbar'),closeBtn=document.querySelector('.topbar-close');
   if(topbar&&closeBtn){closeBtn.addEventListener('click',function(){
-    try{localStorage.setItem('spark-topbar','off')}catch(e){}
     topbar.style.maxHeight=topbar.offsetHeight+'px';
     topbar.style.overflow='hidden';
     requestAnimationFrame(function(){

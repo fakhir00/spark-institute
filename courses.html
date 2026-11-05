@@ -686,7 +686,7 @@ body::after{content:"";position:fixed;inset:0;z-index:300;pointer-events:none;op
     </span>
   </div>
 </div>
-<script>try{if(localStorage.getItem('spark-topbar')==='off'){document.getElementById('topbar').style.display='none'}}catch(e){}</script>
+
 
 <!-- ======= HEADER ======= -->
 <header class="site">
@@ -912,16 +912,15 @@ body::after{content:"";position:fixed;inset:0;z-index:300;pointer-events:none;op
     </div>
     <div class="f-bottom">
       <span>© 2026 SPARK — School of Practical AI &amp; Real Knowledge. All rights reserved.</span>
-      <span>Photography: Unsplash &nbsp;·&nbsp; Learn. Build. Apply.</span>
+      <span>Learn. Build. Apply.</span>
     </div>
   </div>
 </footer>
 <script>/* SPARK site interactions */
 (function(){
-  /* dismissable announcement bar — remembers the choice */
+  /* dismissable announcement bar — closes for this page view only */
   var topbar=document.getElementById('topbar'),closeBtn=document.querySelector('.topbar-close');
   if(topbar&&closeBtn){closeBtn.addEventListener('click',function(){
-    try{localStorage.setItem('spark-topbar','off')}catch(e){}
     topbar.style.maxHeight=topbar.offsetHeight+'px';
     topbar.style.overflow='hidden';
     requestAnimationFrame(function(){
