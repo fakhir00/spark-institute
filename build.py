@@ -25,6 +25,8 @@ IMAGES = {
     "ai":        "media-generation-course-ai-everyone-0-30eb1923-3a3f-4d45-8bbf-be24c2d76b46.jpg",
     "wordpress": "media-generation-course-wordpress-0-02ef6708-45e9-442c-bfe9-f457a3a88509.jpg",
     "seo":       "media-generation-course-seo-0-46c6f662-3cd4-442f-ad8b-67a301686f9f.jpg",
+    "logo":      "spark-wordmark.png",
+    "favicon":   "spark-favicon.png",
 }
 
 PAGES = {
@@ -43,6 +45,15 @@ QUALITY = 68
 
 def data_uri(path):
     from PIL import Image
+    if path.lower().endswith(".png"):
+        # keep PNG (transparency) for logos/marks; 480px is plenty for a
+        # header logo displayed ~90px wide, and keeps the page light
+        im = Image.open(path).convert("RGBA")
+        if im.width > 480:
+            im = im.resize((480, int(im.height * 480 / im.width)), Image.LANCZOS)
+        buf = io.BytesIO()
+        im.save(buf, "PNG", optimize=True)
+        return "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode("ascii")
     im = Image.open(path).convert("RGB")
     if im.width > CARD_W:
         im = im.resize((CARD_W, int(im.height * CARD_W / im.width)), Image.LANCZOS)
