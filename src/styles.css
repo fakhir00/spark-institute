@@ -486,3 +486,149 @@ footer.site{background-image:linear-gradient(#100c24,#100c24),linear-gradient(90
   .terminal-line{padding:10px 16px}
   .hero-ctas{margin:18px 0 16px}
 }
+
+/* ============ CRAWLGAP "DARK & ALIVE" THEME ============
+   SPARK re-skinned in the CrawlGap brand kit, pulled from the live
+   site (site-map-tool.vercel.app): abyss #0B0E14, surface #12161F,
+   raised #161B26, line #1C2230, ink #F2F4F8, muted #9AA3B2,
+   glow amber #F5A524, bright gold #FFB63D, alive green #34D399,
+   on-accent #0B0E14. Appended last so it overrides the light theme. */
+:root{
+  --primary:#f5a524;
+  --primary-dark:#d98a0e;
+  --primary-darker:#0b0e14;
+  --primary-soft:#1c2230;
+  --primary-softer:#12161f;
+  --accent:#ffb63d;
+  --ink:#f2f4f8;
+  --muted:#9aa3b2;
+  --line:#1c2230;
+  --bg:#0b0e14;
+  --bg-soft:#12161f;
+  --green:#34d399;
+  --violet:#a78bfa;
+  --shadow:0 18px 45px -18px rgba(0,0,0,.6);
+  --shadow-sm:0 8px 24px -12px rgba(0,0,0,.5);
+  --glow:0 8px 32px rgba(245,165,36,.28);
+}
+::selection{background:#f5a524;color:#0b0e14}
+/* topbar: gold band, dark text */
+.topbar{background:var(--primary);color:#0b0e14}
+.topbar a.cta{color:#0b0e14;border-bottom-color:#0b0e14}
+.topbar .dot{background:var(--green)}
+/* header: dark glass */
+header.site{background:rgba(11,14,20,.92)}
+header.site.scrolled{box-shadow:0 10px 30px -12px rgba(0,0,0,.6)}
+.brand .name{color:#f5a524}
+.brand .mark{color:#0b0e14}
+.nav-links a.active{color:var(--primary)}
+/* buttons */
+.btn-primary{background:var(--primary);color:#0b0e14;box-shadow:0 12px 26px -10px rgba(245,165,36,.4)}
+.btn-primary:hover{background:#ffb63d}
+.btn-outline{background:transparent;color:var(--primary);border-color:var(--primary)}
+.btn-outline:hover{background:rgba(245,165,36,.1)}
+.btn-white{background:#0b0e14;color:#f5a524}
+.nav-links .btn{color:#0b0e14}
+/* hero: dark with gold light */
+.hero{background:radial-gradient(900px 480px at 12% -8%,rgba(245,165,36,.14) 0%,transparent 60%),radial-gradient(760px 420px at 92% 12%,rgba(245,165,36,.08) 0%,transparent 55%),var(--bg-soft)}
+.hero-badge{background:#161b26;color:#f5a524}
+.hero-badge .dot{background:#34d399}
+.hero-art .frame{border-color:#161b26}
+.hero-art .float-card{background:#161b26}
+.hero-art .float-card .ic{background:#1c2230}
+/* cards: dark surfaces */
+.hcard,.pillar,.who-card,.testi,.eb-card,.ccard,.faq-item,.enroll-wrap{background:#12161f}
+.hcard .ic{background:linear-gradient(135deg,var(--primary),var(--accent));color:#0b0e14}
+.pillar .ic,.who-card .ic{background:#1c2230}
+.ccard .thumb{background:#161b26}
+.tag{background:var(--primary);color:#0b0e14}
+.ccard:hover,.pillar:hover,.hcard:hover{border-color:rgba(245,165,36,.5)}
+.faq-item.open{border-color:rgba(245,165,36,.5)}
+.faq-q .fi{background:#1c2230}
+.about-art .exp{background:var(--primary);color:#0b0e14}
+/* stats: gold numbers */
+.stats-band{background:linear-gradient(120deg,#0b0e14,#12161f 65%,#1a1410)}
+.stat b{color:#f5a524}
+.stat span{color:#9aa3b2}
+/* method: dark lab, gold grid + numbers */
+.method{background:radial-gradient(1000px 500px at 50% -10%,rgba(245,165,36,.12) 0%,transparent 60%),linear-gradient(180deg,#0b0e14,#12161f)}
+.method::before{background:radial-gradient(circle,rgba(245,165,36,.12),transparent 65%)}
+.method .eyebrow{background:rgba(245,165,36,.12);border-color:rgba(245,165,36,.3);color:#f5a524}
+.method .eyebrow::before{background:#f5a524}
+.method .sec-head p,.method .bottom-note,.step p{color:#9aa3b2}
+.step{background:rgba(255,255,255,.04);border-color:#1c2230}
+.step:hover{background:rgba(245,165,36,.06)}
+.step .num{color:#f5a524;text-shadow:0 0 22px rgba(245,165,36,.5)}
+/* mentor + portfolio duo: gold mentor panel, dark portfolio panel */
+.duo-card.mentor{background:linear-gradient(135deg,#f5a524,#ffb63d);color:#0b0e14}
+.duo-card.mentor p{color:rgba(11,14,20,.78)}
+.duo-card.mentor ul li{color:#0b0e14}
+.duo-card.mentor .ck{background:rgba(11,14,20,.14);color:#0b0e14}
+.duo-card.portfolio{background:#12161f}
+.duo-card.portfolio .ck{background:#1c2230;color:#f5a524}
+/* why tiles: dark cards, gold icons */
+.why-tile{background:#12161f;border-color:var(--line);color:var(--ink)}
+.why-tile:nth-child(2),.why-tile:nth-child(3),.why-tile:nth-child(4){background:#12161f;border-color:var(--line)}
+.why-tile:nth-child(n+2){color:var(--ink)}
+.why-tile:nth-child(n+2) p{color:var(--muted)}
+.why-tile .ic,.why-tile:nth-child(n+2) .ic{background:#1c2230;box-shadow:none}
+/* final CTA: gold band */
+.final{background:linear-gradient(120deg,#f5a524,#ffb63d);color:#0b0e14}
+.final::before,.final::after{background:radial-gradient(circle,rgba(11,14,20,.12),transparent 65%)}
+.final p{color:rgba(11,14,20,.75)}
+.final .tagline{color:#0b0e14}
+.final .btn-white{background:#0b0e14;color:#f5a524}
+/* enroll: gold info panel, dark form */
+.enroll-info{background:linear-gradient(135deg,#f5a524,#ffb63d);color:#0b0e14}
+.enroll-info p{color:rgba(11,14,20,.78)}
+.enroll-info .ck{background:rgba(11,14,20,.14);color:#0b0e14}
+.f-group input,.f-group select,.f-group textarea{background:#0b0e14;border-color:#1c2230}
+.f-group input:focus,.f-group select:focus,.f-group textarea:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(245,165,36,.15)}
+.form-ok .big{background:rgba(52,211,153,.14)}
+/* testimonials + events */
+.testi .avatar{background:linear-gradient(135deg,var(--primary),var(--accent));color:#0b0e14}
+.eb-cover.v1{background:linear-gradient(135deg,#f5a524,#ffb63d)}
+.eb-cover.v2{background:linear-gradient(135deg,#161b26,#0b0e14)}
+.eb-cover.v3{background:linear-gradient(135deg,#d98a0e,#f5a524)}
+.eb-date{background:#161b26}
+.eb-date b{color:#f5a524}
+/* trust + placeholder */
+.trust-logos span{background:#0b0e14;color:#9aa3b2}
+.placeholder-note{background:rgba(245,165,36,.08);border-color:rgba(245,165,36,.4);color:#f5a524}
+/* filters */
+.filter-bar button{background:#12161f}
+.filter-bar button.on{background:linear-gradient(135deg,var(--primary),var(--accent));color:#0b0e14}
+/* inner page hero */
+.page-hero{background:radial-gradient(900px 420px at 15% -10%,rgba(245,165,36,.12) 0%,transparent 60%),radial-gradient(700px 380px at 88% 10%,rgba(245,165,36,.07) 0%,transparent 55%),var(--bg-soft)}
+.page-hero::before{background-image:linear-gradient(rgba(245,165,36,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(245,165,36,.06) 1px,transparent 1px)}
+/* footer: abyss with gold glow line */
+footer.site{background-color:#0b0e14;color:#9aa3b2;background-image:linear-gradient(#0b0e14,#0b0e14),linear-gradient(90deg,transparent,#f5a524,#ffb63d,transparent)}
+.f-brand p{color:#9aa3b2}
+.f-brand .motto{color:#f5a524}
+.f-links a{color:#9aa3b2}
+.f-links a:hover{color:#f5a524}
+.f-bottom{color:#9aa3b2}
+/* tech layer: gold particles, ticker, orbit */
+.scroll-progress{box-shadow:0 0 12px rgba(245,165,36,.7)}
+.terminal-line{background:#0b0e14;color:#f2f4f8;border-color:#1c2230;box-shadow:inset 0 0 24px rgba(245,165,36,.08),var(--glow)}
+.terminal-line .prompt{color:#f5a524}
+.caret{background:#f5a524}
+.ticker{background:linear-gradient(90deg,#0b0e14,#12161f 50%,#0b0e14);border-color:#1c2230}
+.ticker::before{background:linear-gradient(90deg,#0b0e14,transparent)}
+.ticker::after{background:linear-gradient(-90deg,#0b0e14,transparent)}
+.tick-chip{color:#9aa3b2;background:rgba(245,165,36,.08);border-color:#1c2230}
+.tick-chip:hover{border-color:#f5a524;color:#fff;box-shadow:0 0 16px rgba(245,165,36,.4)}
+.tick-chip b{color:#f5a524}
+.method::before{background-image:linear-gradient(rgba(245,165,36,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(245,165,36,.06) 1px,transparent 1px)}
+.page-hero::before{background-image:linear-gradient(rgba(245,165,36,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(245,165,36,.06) 1px,transparent 1px)}
+.orbit::before{border-color:rgba(245,165,36,.6)}
+.orbit span{background:var(--accent);box-shadow:0 0 16px 4px rgba(245,165,36,.55)}
+/* mobile menu on dark */
+@media(max-width:1020px){
+  .nav-links{background:#0b0e14;box-shadow:0 30px 40px -20px rgba(0,0,0,.6)}
+}
+
+/* mobile grid blowout fix: the terminal's nowrap text was forcing the
+   hero column wider than the viewport on phones */
+.hero-grid>div{min-width:0}
+#typer{text-overflow:ellipsis}

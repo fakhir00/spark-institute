@@ -132,12 +132,12 @@
         for (j = i+1; j < pts.length; j++) {
           q = pts[j]; dx = p.x-q.x; dy = p.y-q.y; d = dx*dx+dy*dy;
           if (d < 150*150) {
-            ctx.strokeStyle = 'rgba(124,58,237,'+(0.16*(1-d/22500)).toFixed(3)+')';
+            ctx.strokeStyle = 'rgba(245,165,36,'+(0.16*(1-d/22500)).toFixed(3)+')';
             ctx.lineWidth = 1;
             ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.stroke();
           }
         }
-        ctx.fillStyle = 'rgba(90,45,190,.5)';
+        ctx.fillStyle = 'rgba(245,165,36,.5)';
         ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,7); ctx.fill();
       }
       requestAnimationFrame(draw);

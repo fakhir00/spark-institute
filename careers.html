@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Careers & Mentorship | SPARK</title>
 <meta name="description" content="SPARK — School of Practical AI & Real Knowledge. Practical, hands-on AI and digital skills training. Learn in person, build real projects, get mentored.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233a1483'/%3E%3Cpath d='M17.5 5 8 18h6l-1.5 9L22 14h-6l1.5-9z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f5a524'/%3E%3Cpath d='M17.5 5 8 18h6l-1.5 9L22 14h-6l1.5-9z' fill='%230b0e14'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -498,6 +498,152 @@ footer.site{background-image:linear-gradient(#100c24,#100c24),linear-gradient(90
   .terminal-line{padding:10px 16px}
   .hero-ctas{margin:18px 0 16px}
 }
+
+/* ============ CRAWLGAP "DARK & ALIVE" THEME ============
+   SPARK re-skinned in the CrawlGap brand kit, pulled from the live
+   site (site-map-tool.vercel.app): abyss #0B0E14, surface #12161F,
+   raised #161B26, line #1C2230, ink #F2F4F8, muted #9AA3B2,
+   glow amber #F5A524, bright gold #FFB63D, alive green #34D399,
+   on-accent #0B0E14. Appended last so it overrides the light theme. */
+:root{
+  --primary:#f5a524;
+  --primary-dark:#d98a0e;
+  --primary-darker:#0b0e14;
+  --primary-soft:#1c2230;
+  --primary-softer:#12161f;
+  --accent:#ffb63d;
+  --ink:#f2f4f8;
+  --muted:#9aa3b2;
+  --line:#1c2230;
+  --bg:#0b0e14;
+  --bg-soft:#12161f;
+  --green:#34d399;
+  --violet:#a78bfa;
+  --shadow:0 18px 45px -18px rgba(0,0,0,.6);
+  --shadow-sm:0 8px 24px -12px rgba(0,0,0,.5);
+  --glow:0 8px 32px rgba(245,165,36,.28);
+}
+::selection{background:#f5a524;color:#0b0e14}
+/* topbar: gold band, dark text */
+.topbar{background:var(--primary);color:#0b0e14}
+.topbar a.cta{color:#0b0e14;border-bottom-color:#0b0e14}
+.topbar .dot{background:var(--green)}
+/* header: dark glass */
+header.site{background:rgba(11,14,20,.92)}
+header.site.scrolled{box-shadow:0 10px 30px -12px rgba(0,0,0,.6)}
+.brand .name{color:#f5a524}
+.brand .mark{color:#0b0e14}
+.nav-links a.active{color:var(--primary)}
+/* buttons */
+.btn-primary{background:var(--primary);color:#0b0e14;box-shadow:0 12px 26px -10px rgba(245,165,36,.4)}
+.btn-primary:hover{background:#ffb63d}
+.btn-outline{background:transparent;color:var(--primary);border-color:var(--primary)}
+.btn-outline:hover{background:rgba(245,165,36,.1)}
+.btn-white{background:#0b0e14;color:#f5a524}
+.nav-links .btn{color:#0b0e14}
+/* hero: dark with gold light */
+.hero{background:radial-gradient(900px 480px at 12% -8%,rgba(245,165,36,.14) 0%,transparent 60%),radial-gradient(760px 420px at 92% 12%,rgba(245,165,36,.08) 0%,transparent 55%),var(--bg-soft)}
+.hero-badge{background:#161b26;color:#f5a524}
+.hero-badge .dot{background:#34d399}
+.hero-art .frame{border-color:#161b26}
+.hero-art .float-card{background:#161b26}
+.hero-art .float-card .ic{background:#1c2230}
+/* cards: dark surfaces */
+.hcard,.pillar,.who-card,.testi,.eb-card,.ccard,.faq-item,.enroll-wrap{background:#12161f}
+.hcard .ic{background:linear-gradient(135deg,var(--primary),var(--accent));color:#0b0e14}
+.pillar .ic,.who-card .ic{background:#1c2230}
+.ccard .thumb{background:#161b26}
+.tag{background:var(--primary);color:#0b0e14}
+.ccard:hover,.pillar:hover,.hcard:hover{border-color:rgba(245,165,36,.5)}
+.faq-item.open{border-color:rgba(245,165,36,.5)}
+.faq-q .fi{background:#1c2230}
+.about-art .exp{background:var(--primary);color:#0b0e14}
+/* stats: gold numbers */
+.stats-band{background:linear-gradient(120deg,#0b0e14,#12161f 65%,#1a1410)}
+.stat b{color:#f5a524}
+.stat span{color:#9aa3b2}
+/* method: dark lab, gold grid + numbers */
+.method{background:radial-gradient(1000px 500px at 50% -10%,rgba(245,165,36,.12) 0%,transparent 60%),linear-gradient(180deg,#0b0e14,#12161f)}
+.method::before{background:radial-gradient(circle,rgba(245,165,36,.12),transparent 65%)}
+.method .eyebrow{background:rgba(245,165,36,.12);border-color:rgba(245,165,36,.3);color:#f5a524}
+.method .eyebrow::before{background:#f5a524}
+.method .sec-head p,.method .bottom-note,.step p{color:#9aa3b2}
+.step{background:rgba(255,255,255,.04);border-color:#1c2230}
+.step:hover{background:rgba(245,165,36,.06)}
+.step .num{color:#f5a524;text-shadow:0 0 22px rgba(245,165,36,.5)}
+/* mentor + portfolio duo: gold mentor panel, dark portfolio panel */
+.duo-card.mentor{background:linear-gradient(135deg,#f5a524,#ffb63d);color:#0b0e14}
+.duo-card.mentor p{color:rgba(11,14,20,.78)}
+.duo-card.mentor ul li{color:#0b0e14}
+.duo-card.mentor .ck{background:rgba(11,14,20,.14);color:#0b0e14}
+.duo-card.portfolio{background:#12161f}
+.duo-card.portfolio .ck{background:#1c2230;color:#f5a524}
+/* why tiles: dark cards, gold icons */
+.why-tile{background:#12161f;border-color:var(--line);color:var(--ink)}
+.why-tile:nth-child(2),.why-tile:nth-child(3),.why-tile:nth-child(4){background:#12161f;border-color:var(--line)}
+.why-tile:nth-child(n+2){color:var(--ink)}
+.why-tile:nth-child(n+2) p{color:var(--muted)}
+.why-tile .ic,.why-tile:nth-child(n+2) .ic{background:#1c2230;box-shadow:none}
+/* final CTA: gold band */
+.final{background:linear-gradient(120deg,#f5a524,#ffb63d);color:#0b0e14}
+.final::before,.final::after{background:radial-gradient(circle,rgba(11,14,20,.12),transparent 65%)}
+.final p{color:rgba(11,14,20,.75)}
+.final .tagline{color:#0b0e14}
+.final .btn-white{background:#0b0e14;color:#f5a524}
+/* enroll: gold info panel, dark form */
+.enroll-info{background:linear-gradient(135deg,#f5a524,#ffb63d);color:#0b0e14}
+.enroll-info p{color:rgba(11,14,20,.78)}
+.enroll-info .ck{background:rgba(11,14,20,.14);color:#0b0e14}
+.f-group input,.f-group select,.f-group textarea{background:#0b0e14;border-color:#1c2230}
+.f-group input:focus,.f-group select:focus,.f-group textarea:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(245,165,36,.15)}
+.form-ok .big{background:rgba(52,211,153,.14)}
+/* testimonials + events */
+.testi .avatar{background:linear-gradient(135deg,var(--primary),var(--accent));color:#0b0e14}
+.eb-cover.v1{background:linear-gradient(135deg,#f5a524,#ffb63d)}
+.eb-cover.v2{background:linear-gradient(135deg,#161b26,#0b0e14)}
+.eb-cover.v3{background:linear-gradient(135deg,#d98a0e,#f5a524)}
+.eb-date{background:#161b26}
+.eb-date b{color:#f5a524}
+/* trust + placeholder */
+.trust-logos span{background:#0b0e14;color:#9aa3b2}
+.placeholder-note{background:rgba(245,165,36,.08);border-color:rgba(245,165,36,.4);color:#f5a524}
+/* filters */
+.filter-bar button{background:#12161f}
+.filter-bar button.on{background:linear-gradient(135deg,var(--primary),var(--accent));color:#0b0e14}
+/* inner page hero */
+.page-hero{background:radial-gradient(900px 420px at 15% -10%,rgba(245,165,36,.12) 0%,transparent 60%),radial-gradient(700px 380px at 88% 10%,rgba(245,165,36,.07) 0%,transparent 55%),var(--bg-soft)}
+.page-hero::before{background-image:linear-gradient(rgba(245,165,36,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(245,165,36,.06) 1px,transparent 1px)}
+/* footer: abyss with gold glow line */
+footer.site{background-color:#0b0e14;color:#9aa3b2;background-image:linear-gradient(#0b0e14,#0b0e14),linear-gradient(90deg,transparent,#f5a524,#ffb63d,transparent)}
+.f-brand p{color:#9aa3b2}
+.f-brand .motto{color:#f5a524}
+.f-links a{color:#9aa3b2}
+.f-links a:hover{color:#f5a524}
+.f-bottom{color:#9aa3b2}
+/* tech layer: gold particles, ticker, orbit */
+.scroll-progress{box-shadow:0 0 12px rgba(245,165,36,.7)}
+.terminal-line{background:#0b0e14;color:#f2f4f8;border-color:#1c2230;box-shadow:inset 0 0 24px rgba(245,165,36,.08),var(--glow)}
+.terminal-line .prompt{color:#f5a524}
+.caret{background:#f5a524}
+.ticker{background:linear-gradient(90deg,#0b0e14,#12161f 50%,#0b0e14);border-color:#1c2230}
+.ticker::before{background:linear-gradient(90deg,#0b0e14,transparent)}
+.ticker::after{background:linear-gradient(-90deg,#0b0e14,transparent)}
+.tick-chip{color:#9aa3b2;background:rgba(245,165,36,.08);border-color:#1c2230}
+.tick-chip:hover{border-color:#f5a524;color:#fff;box-shadow:0 0 16px rgba(245,165,36,.4)}
+.tick-chip b{color:#f5a524}
+.method::before{background-image:linear-gradient(rgba(245,165,36,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(245,165,36,.06) 1px,transparent 1px)}
+.page-hero::before{background-image:linear-gradient(rgba(245,165,36,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(245,165,36,.06) 1px,transparent 1px)}
+.orbit::before{border-color:rgba(245,165,36,.6)}
+.orbit span{background:var(--accent);box-shadow:0 0 16px 4px rgba(245,165,36,.55)}
+/* mobile menu on dark */
+@media(max-width:1020px){
+  .nav-links{background:#0b0e14;box-shadow:0 30px 40px -20px rgba(0,0,0,.6)}
+}
+
+/* mobile grid blowout fix: the terminal's nowrap text was forcing the
+   hero column wider than the viewport on phones */
+.hero-grid>div{min-width:0}
+#typer{text-overflow:ellipsis}
 </style>
 </head>
 <body><!-- ======= TOPBAR ======= -->
@@ -512,7 +658,7 @@ footer.site{background-image:linear-gradient(#100c24,#100c24),linear-gradient(90
 <header class="site">
   <div class="container nav">
     <a class="brand" href="index.html" aria-label="SPARK home">
-      <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" fill="#fff"/></svg></span>
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" fill="#0b0e14"/></svg></span>
       <span><span class="name">SPARK</span><span class="sub">School of Practical AI &amp; Real Knowledge</span></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
@@ -545,19 +691,19 @@ footer.site{background-image:linear-gradient(#100c24,#100c24),linear-gradient(90
       <p>Learning something new can be challenging. Having the right guidance makes a difference. At SPARK, your learning journey includes one year of mentorship and continued learning support.</p>
       <p>Whether you&rsquo;re struggling with an assignment, exploring an AI tool, improving a project, or figuring out your next career move — you&rsquo;ll have access to guidance along the way.</p>
       <ul>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>One-on-one learning sessions</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Live Q&amp;A and dedicated chat support</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Your progress matters — not just your attendance</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0e14" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>One-on-one learning sessions</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0e14" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Live Q&amp;A and dedicated chat support</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0e14" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Your progress matters — not just your attendance</li>
       </ul>
     </div>
     <div class="duo-card portfolio rv">
       <h2>Build a Portfolio That Speaks for You.</h2>
       <p>Throughout your course you&rsquo;ll work towards a practical portfolio through projects, assignments, and guided activities — with support at every stage:</p>
       <ul>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#3a1483" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Project planning and development</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#3a1483" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Portfolio creation, reviews and feedback</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#3a1483" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Presenting your work professionally</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#3a1483" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Identifying areas for improvement</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#f5a524" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Project planning and development</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#f5a524" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Portfolio creation, reviews and feedback</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#f5a524" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Presenting your work professionally</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#f5a524" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Identifying areas for improvement</li>
       </ul>
     </div>
   </div>
@@ -572,10 +718,10 @@ footer.site{background-image:linear-gradient(#100c24,#100c24),linear-gradient(90
       <p>Opportunities go to people who are capable <em>and</em> confident. That&rsquo;s why SPARK develops both.</p>
     </div>
     <div class="pillar-grid">
-      <div class="pillar rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3a1483" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><h3>Personal Growth</h3><p style="font-size:14px;color:var(--muted)">Growth sessions plus goal-setting and progress tracking.</p></div>
-      <div class="pillar rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3a1483" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span><h3>Career Advice</h3><p style="font-size:14px;color:var(--muted)">One-on-one career advisor sessions for your next move.</p></div>
-      <div class="pillar rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3a1483" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><h3>Network</h3><p style="font-size:14px;color:var(--muted)">Events and a community of ambitious learners.</p></div>
-      <div class="pillar rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3a1483" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="m10 11 2 2 4-4"/></svg></span><h3>Real Experience</h3><p style="font-size:14px;color:var(--muted)">Internship opportunities, subject to availability.</p></div>
+      <div class="pillar rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#f5a524" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><h3>Personal Growth</h3><p style="font-size:14px;color:var(--muted)">Growth sessions plus goal-setting and progress tracking.</p></div>
+      <div class="pillar rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#f5a524" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span><h3>Career Advice</h3><p style="font-size:14px;color:var(--muted)">One-on-one career advisor sessions for your next move.</p></div>
+      <div class="pillar rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#f5a524" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><h3>Network</h3><p style="font-size:14px;color:var(--muted)">Events and a community of ambitious learners.</p></div>
+      <div class="pillar rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#f5a524" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="m10 11 2 2 4-4"/></svg></span><h3>Real Experience</h3><p style="font-size:14px;color:var(--muted)">Internship opportunities, subject to availability.</p></div>
     </div>
   </div>
 </section>
@@ -589,7 +735,7 @@ footer.site{background-image:linear-gradient(#100c24,#100c24),linear-gradient(90
       <p class="tagline">YOUR SPARK STARTS HERE.</p>
       <div class="cta-row">
         <a class="btn btn-white" href="#courses">Explore Courses</a>
-        <a class="btn btn-outline" style="border-color:#fff;color:#fff;background:transparent" href="#enroll">Talk to Our Team</a>
+        <a class="btn btn-outline" style="border-color:#0b0e14;color:#0b0e14;background:transparent" href="#enroll">Talk to Our Team</a>
       </div>
     </div>
   </div>
@@ -599,7 +745,7 @@ footer.site{background-image:linear-gradient(#100c24,#100c24),linear-gradient(90
   <div class="container">
     <div class="f-grid">
       <div class="f-brand">
-        <a class="brand" href="index.html"><span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" fill="#fff"/></svg></span><span><span class="name">SPARK</span><span class="sub" style="color:#8f89b3">School of Practical AI &amp; Real Knowledge</span></span></a>
+        <a class="brand" href="index.html"><span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z" fill="#0b0e14"/></svg></span><span><span class="name">SPARK</span><span class="sub" style="color:#9aa3b2">School of Practical AI &amp; Real Knowledge</span></span></a>
         <p>Practical, hands-on AI and digital skills training — learn in person, build real projects, and get mentored by people who understand the industry.</p>
         <p class="motto">LEARN. BUILD. APPLY.</p>
       </div>
@@ -774,12 +920,12 @@ footer.site{background-image:linear-gradient(#100c24,#100c24),linear-gradient(90
         for (j = i+1; j < pts.length; j++) {
           q = pts[j]; dx = p.x-q.x; dy = p.y-q.y; d = dx*dx+dy*dy;
           if (d < 150*150) {
-            ctx.strokeStyle = 'rgba(124,58,237,'+(0.16*(1-d/22500)).toFixed(3)+')';
+            ctx.strokeStyle = 'rgba(245,165,36,'+(0.16*(1-d/22500)).toFixed(3)+')';
             ctx.lineWidth = 1;
             ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.stroke();
           }
         }
-        ctx.fillStyle = 'rgba(90,45,190,.5)';
+        ctx.fillStyle = 'rgba(245,165,36,.5)';
         ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,7); ctx.fill();
       }
       requestAnimationFrame(draw);
