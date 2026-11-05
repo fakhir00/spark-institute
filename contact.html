@@ -406,6 +406,64 @@ footer.site h4{color:#fff;font-size:15px;margin-bottom:18px;letter-spacing:.5px}
 footer.site{border-top:1px solid transparent;background-image:linear-gradient(#14102b,#14102b),linear-gradient(90deg,transparent,#7c3aed,#e8a33d,transparent);background-origin:border-box;background-clip:padding-box,border-box}
 @media (prefers-reduced-motion:reduce){.ticker-track{animation:none}.caret{animation:none}}
 @media(max-width:768px){#net{opacity:.35}.terminal-line{font-size:13px}}
+
+/* ============ DESIGN SYSTEM UNIFICATION ============ */
+:root{--violet:#5b21b6;--green:#22c55e;--radius:20px}
+/* one radius for all cards, one for big panels */
+.hcard,.pillar,.who-card,.testi,.eb-card{border-radius:20px}
+.duo-card,.trust-strip,.final{border-radius:28px}
+/* one icon chip */
+.hcard .ic,.pillar .ic,.who-card .ic,.why-tile .ic{width:52px;height:52px;border-radius:15px}
+.why-tile .ic{background:var(--primary-soft);box-shadow:none}
+/* one green */
+.topbar .dot{background:var(--green)}
+/* violet token (was hardcoded #5b21b6 in five places) */
+.stats-band{background:linear-gradient(120deg,var(--primary-darker),var(--primary) 65%,var(--violet))}
+.final{background:linear-gradient(120deg,var(--primary-darker),var(--primary) 60%,var(--violet))}
+.eb-cover.v3{background:linear-gradient(135deg,var(--violet),#a78bfa)}
+/* one dark gradient for the two big panels */
+.enroll-info,.duo-card.mentor{background:linear-gradient(135deg,var(--primary),var(--accent))}
+/* footer: single navy fill, violet-only glow line (gold was an orphan accent) */
+footer.site{background-image:linear-gradient(#100c24,#100c24),linear-gradient(90deg,transparent,#7c3aed,#a78bfa,transparent)}
+/* why tiles: same white-card system as every other card on the site */
+.why-tile{background:#fff;border-color:var(--line);color:var(--ink)}
+.why-tile:nth-child(2),.why-tile:nth-child(3),.why-tile:nth-child(4){background:#fff;border-color:var(--line)}
+.why-tile:nth-child(n+2){color:var(--ink)}
+.why-tile:nth-child(n+2) p{color:var(--muted)}
+.why-tile:nth-child(n+2) .ic{background:var(--primary-soft);box-shadow:none}
+/* card titles: one size */
+.ccard h3{font-size:18px}
+/* mobile hero badge: no awkward wrap */
+@media(max-width:640px){.hero-badge{font-size:12px;padding:8px 14px}}
+
+/* ============ MOTION ============ */
+@keyframes heroIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.hero-grid>div{animation:heroIn .8s cubic-bezier(.22,.7,.25,1) both}
+.hero-grid>div:last-child{animation-delay:.15s}
+/* button shine sweep */
+.btn-primary{position:relative;overflow:hidden}
+.btn-primary::after{content:"";position:absolute;top:0;left:-80%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .6s ease;pointer-events:none}
+.btn-primary:hover::after{left:135%}
+/* image zoom on hover */
+.about-art img,.hero-art .frame img{transition:transform .6s cubic-bezier(.22,.7,.25,1)}
+.about-art:hover img{transform:scale(1.03)}
+.hero-art:hover .frame img{transform:scale(1.04)}
+
+/* ============ 3D ============ */
+.tilt{transform-style:preserve-3d;will-change:transform;transition:transform .15s ease-out,box-shadow .25s ease,border-color .25s ease}
+.tilt .thumb{transform:translateZ(26px)}
+.tilt .body{transform:translateZ(14px)}
+.course-grid,.pillar-grid,.who-grid,.testi-grid,.eb-grid,.hero-cards,.why-art,.duo,.steps,.hero-grid,.about-grid{perspective:1000px}
+.hero-art{position:relative}
+.hero-art .frame{position:relative;z-index:1}
+.hero-art .float-card{z-index:2}
+/* 3D orbit ring behind the hero art */
+.orbit{position:absolute;width:220px;height:220px;top:-64px;right:-56px;z-index:0;pointer-events:none;animation:orbitSpin 16s linear infinite}
+.orbit::before{content:"";position:absolute;inset:0;border:1.5px dashed rgba(124,58,237,.6);border-radius:50%}
+.orbit span{position:absolute;top:50%;left:-6px;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px 4px rgba(124,58,237,.55)}
+@keyframes orbitSpin{from{transform:rotateX(62deg) rotateZ(0)}to{transform:rotateX(62deg) rotateZ(360deg)}}
+@media(max-width:1020px){.orbit{display:none}}
+@media (prefers-reduced-motion:reduce){.orbit{animation:none}.hero-grid>div{animation:none}.ticker-track{animation:none}}
 </style>
 </head>
 <body><!-- ======= TOPBAR ======= -->
@@ -733,6 +791,40 @@ footer.site{border-top:1px solid transparent;background-image:linear-gradient(#1
       });
     });
   }
+})();
+
+/* ============ 3D TILT + STAGGER ============ */
+(function(){
+  "use strict";
+  var fine = matchMedia('(pointer:fine)').matches;
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* stagger reveal delays inside grids */
+  document.querySelectorAll('.course-grid,.pillar-grid,.who-grid,.testi-grid,.eb-grid,.hero-cards,.steps,.why-art').forEach(function(grid){
+    grid.querySelectorAll('.rv').forEach(function(el,i){ el.style.transitionDelay = ((i%4)*70)+'ms'; });
+  });
+
+  if (!fine || reduced) return;
+
+  /* 3D tilt on cards and art (mouse-driven, desktop only) */
+  var targets = [
+    ['.ccard', 6], ['.pillar', 4], ['.who-card', 4], ['.testi', 4],
+    ['.eb-card', 4], ['.hcard', 4], ['.why-tile', 4], ['.duo-card', 3],
+    ['.hero-art', 4], ['.about-art', 4]
+  ];
+  targets.forEach(function(pair){
+    document.querySelectorAll(pair[0]).forEach(function(el){
+      var max = pair[1];
+      el.classList.add('tilt');
+      el.addEventListener('mousemove', function(e){
+        var r = el.getBoundingClientRect();
+        var px = (e.clientX - r.left)/r.width - .5;
+        var py = (e.clientY - r.top)/r.height - .5;
+        el.style.transform = 'translateY(-6px) rotateX('+(-py*max).toFixed(2)+'deg) rotateY('+(px*max).toFixed(2)+'deg)';
+      });
+      el.addEventListener('mouseleave', function(){ el.style.transform = ''; });
+    });
+  });
 })();
 </script>
 </body>

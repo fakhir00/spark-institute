@@ -181,3 +181,37 @@
     });
   }
 })();
+
+/* ============ 3D TILT + STAGGER ============ */
+(function(){
+  "use strict";
+  var fine = matchMedia('(pointer:fine)').matches;
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* stagger reveal delays inside grids */
+  document.querySelectorAll('.course-grid,.pillar-grid,.who-grid,.testi-grid,.eb-grid,.hero-cards,.steps,.why-art').forEach(function(grid){
+    grid.querySelectorAll('.rv').forEach(function(el,i){ el.style.transitionDelay = ((i%4)*70)+'ms'; });
+  });
+
+  if (!fine || reduced) return;
+
+  /* 3D tilt on cards and art (mouse-driven, desktop only) */
+  var targets = [
+    ['.ccard', 6], ['.pillar', 4], ['.who-card', 4], ['.testi', 4],
+    ['.eb-card', 4], ['.hcard', 4], ['.why-tile', 4], ['.duo-card', 3],
+    ['.hero-art', 4], ['.about-art', 4]
+  ];
+  targets.forEach(function(pair){
+    document.querySelectorAll(pair[0]).forEach(function(el){
+      var max = pair[1];
+      el.classList.add('tilt');
+      el.addEventListener('mousemove', function(e){
+        var r = el.getBoundingClientRect();
+        var px = (e.clientX - r.left)/r.width - .5;
+        var py = (e.clientY - r.top)/r.height - .5;
+        el.style.transform = 'translateY(-6px) rotateX('+(-py*max).toFixed(2)+'deg) rotateY('+(px*max).toFixed(2)+'deg)';
+      });
+      el.addEventListener('mouseleave', function(){ el.style.transform = ''; });
+    });
+  });
+})();
