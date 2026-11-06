@@ -712,6 +712,50 @@ body::after{content:"";position:fixed;inset:0;z-index:300;pointer-events:none;op
   .pd-head{grid-template-columns:1fr}
   .path-grid{grid-template-columns:1fr}
 }
+
+/* ============ LIVELY GOLD SLATES — patterned, not plain ============
+   The big gold blocks were flat. They now carry a dot-grid pattern,
+   a soft light wash and (on the final CTA) a diagonal pinstripe,
+   so they feel alive instead of painted on. Pattern stays subtle
+   so the dark text on gold keeps full contrast. */
+.duo-card.mentor,.enroll-info{
+  background-image:
+    radial-gradient(560px 300px at 88% -12%,rgba(255,255,255,.30),transparent 62%),
+    radial-gradient(460px 260px at -8% 112%,rgba(11,14,20,.16),transparent 62%),
+    radial-gradient(circle,rgba(11,14,20,.13) 1.2px,transparent 1.4px),
+    linear-gradient(135deg,#f5a524,#ffb63d);
+  background-size:auto,auto,22px 22px,auto;
+}
+.final{
+  background-image:
+    radial-gradient(900px 480px at 50% -18%,rgba(255,255,255,.26),transparent 62%),
+    radial-gradient(circle,rgba(11,14,20,.11) 1.2px,transparent 1.4px),
+    repeating-linear-gradient(45deg,rgba(11,14,20,.05) 0 2px,transparent 2px 26px),
+    linear-gradient(120deg,#f5a524,#ffb63d);
+  background-size:auto,24px 24px,auto,auto;
+}
+/* event covers: same dot-grid + light wash, plus two corner rings */
+.eb-cover.v1,.eb-cover.v3{
+  background-image:
+    radial-gradient(240px 160px at 80% -20%,rgba(255,255,255,.32),transparent 65%),
+    radial-gradient(circle,rgba(11,14,20,.14) 1.2px,transparent 1.4px),
+    linear-gradient(135deg,#f5a524,#ffb63d);
+  background-size:auto,20px 20px,auto;
+}
+.eb-cover.v2{
+  background-image:
+    radial-gradient(240px 160px at 80% -20%,rgba(245,165,36,.28),transparent 65%),
+    radial-gradient(circle,rgba(245,165,36,.16) 1.2px,transparent 1.4px),
+    linear-gradient(135deg,#161b26,#0b0e14);
+  background-size:auto,20px 20px,auto;
+}
+.eb-cover::before,.eb-cover::after{content:"";position:absolute;border-radius:50%;z-index:0}
+.eb-cover::before{width:220px;height:220px;border:2px solid rgba(11,14,20,.14);right:-70px;bottom:-90px}
+.eb-cover::after{width:130px;height:130px;border:2px solid rgba(11,14,20,.10);right:-30px;bottom:-50px}
+.eb-cover.v2::before{border-color:rgba(245,165,36,.20)}
+.eb-cover.v2::after{border-color:rgba(245,165,36,.13)}
+.eb-cover svg{position:relative;z-index:1}
+.eb-date{z-index:1}
 </style>
 </head>
 <body><!-- ======= TOPBAR ======= -->
