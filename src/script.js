@@ -46,29 +46,29 @@
     document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
   }else{reveal();}
 
-  /* course preselect: ?course= param (contact.html) */
+  /* path preselect: ?path= param (contact.html) */
   var select=document.getElementById('f-course');
-  function pickCourse(name){
+  function pickPath(name){
     if(!select||!name)return;
     for(var i=0;i<select.options.length;i++){
       if(select.options[i].value.toLowerCase()===String(name).toLowerCase()){select.selectedIndex=i;break}
     }
   }
   try{
-    var q=new URLSearchParams(location.search).get('course');
-    if(q){pickCourse(q);}
+    var q=new URLSearchParams(location.search).get('path')||new URLSearchParams(location.search).get('course');
+    if(q){pickPath(q);}
   }catch(e){}
 
-  /* Enroll buttons: stay in-page when the form exists, else go to contact.html?course= */
-  document.querySelectorAll('[data-course]').forEach(function(btn){
+  /* Enroll buttons: stay in-page when the form exists, else go to contact.html?path= */
+  document.querySelectorAll('[data-path]').forEach(function(btn){
     btn.addEventListener('click',function(ev){
-      var c=btn.getAttribute('data-course');
+      var c=btn.getAttribute('data-path');
       if(document.getElementById('enroll-form')){
         ev.preventDefault();
-        pickCourse(c);
+        pickPath(c);
         document.getElementById('enroll').scrollIntoView({behavior:'smooth'});
       }else{
-        btn.setAttribute('href','contact.html?course='+encodeURIComponent(c));
+        btn.setAttribute('href','contact.html?path='+encodeURIComponent(c));
       }
     });
   });
@@ -157,20 +157,6 @@
     })();
   }
 
-  /* course category filter */
-  var fbar = document.querySelector('.filter-bar');
-  if (fbar) {
-    var cards = Array.prototype.slice.call(document.querySelectorAll('.ccard'));
-    fbar.addEventListener('click', function(e){
-      var b = e.target.closest('button'); if (!b) return;
-      fbar.querySelectorAll('button').forEach(function(x){ x.classList.remove('on'); });
-      b.classList.add('on');
-      var f = b.getAttribute('data-filter');
-      cards.forEach(function(c){
-        c.classList.toggle('hide', f !== 'all' && c.getAttribute('data-cat') !== f);
-      });
-    });
-  }
 })();
 
 /* ============ 3D TILT + STAGGER ============ */
@@ -180,7 +166,7 @@
   var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* stagger reveal delays inside grids */
-  document.querySelectorAll('.course-grid,.pillar-grid,.who-grid,.testi-grid,.eb-grid,.hero-cards,.steps,.why-art').forEach(function(grid){
+  document.querySelectorAll('.path-grid,.pillar-grid,.who-grid,.testi-grid,.eb-grid,.hero-cards,.steps,.why-art').forEach(function(grid){
     grid.querySelectorAll('.rv').forEach(function(el,i){ el.style.transitionDelay = ((i%4)*70)+'ms'; });
   });
 

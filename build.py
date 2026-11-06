@@ -18,21 +18,19 @@ IMAGES = {
     "classa":    "unsplash-class-students-1523240795612.jpg",
     "classb":    "unsplash-class-collab-1531482615713.jpg",
     "classc":    "unsplash-class-team-1522071820081.jpg",
-    "meta":      "media-generation-course-meta-ads-0-225622cd-1924-4b1b-898f-e2f442f2c211.jpg",
     "googleads": "media-generation-course-google-ads-0-e743a56a-9e89-4b27-838a-2be0574409e1.jpg",
-    "trading":   "media-generation-course-trading-0-ed0ac00e-6d92-403e-a065-4958f2c5b696.jpg",
-    "shopify":   "media-generation-course-shopify-0-695571ab-4198-407c-a3a0-6bab4e118221.jpg",
-    "ai":        "media-generation-course-ai-everyone-0-30eb1923-3a3f-4d45-8bbf-be24c2d76b46.jpg",
     "wordpress": "media-generation-course-wordpress-0-02ef6708-45e9-442c-bfe9-f457a3a88509.jpg",
     "seo":       "media-generation-course-seo-0-46c6f662-3cd4-442f-ad8b-67a301686f9f.jpg",
     "logo":      "spark-wordmark.png",
     "favicon":   "spark-favicon.png",
     "lockup":    "spark-lockup.png",
+    "mark":      "spark-mark.png",
 }
 
 PAGES = {
-    "index":      "SPARK — School of Practical AI & Real Knowledge | Learn. Build. Apply.",
+    "index":      "SPARK — School of Practical AI & Real Knowledge | Learn. Build. Launch. Earn.",
     "about":      "About SPARK | School of Practical AI & Real Knowledge",
+    "paths":      "Paths | SPARK — Build & Rank an EMD Tool Site or Launch a SaaS",
     "courses":    "Courses | SPARK — School of Practical AI & Real Knowledge",
     "admissions": "Admissions | SPARK — School of Practical AI & Real Knowledge",
     "careers":    "Careers & Mentorship | SPARK",
@@ -88,7 +86,6 @@ def main():
     header = read("partials/header.html")
     footer = read("partials/footer.html")
     tail = read("partials/tail.html")
-    cards = read("partials/course-cards.html")
     cta = read("partials/cta-band.html")
     enroll = read("partials/enroll-form.html")
 
@@ -113,7 +110,7 @@ def main():
 
     for name, title in PAGES.items():
         body = read(f"pages/{name}.html")
-        body = body.replace("{{COURSES}}", cards).replace("{{CTA}}", cta).replace("{{ENROLL}}", enroll)
+        body = body.replace("{{CTA}}", cta).replace("{{ENROLL}}", enroll)
         html = head_top.replace("{{TITLE}}", title) + header + body + footer + tail
         html = html.replace("{{CSS}}", css).replace("{{JS}}", js)
         html, n = re.subn(r"\{\{IMG:([a-z]+)\}\}", img_repl, html)
