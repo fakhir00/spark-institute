@@ -681,6 +681,8 @@ body::after{content:"";position:fixed;inset:0;z-index:300;pointer-events:none;op
 
 /* premium flagship treatment — gold glowing frame + hovering tag */
 .ccard.premium{overflow:visible;border:1.5px solid var(--accent);box-shadow:0 0 0 1px rgba(245,165,36,.3),0 14px 44px rgba(245,165,36,.22)}
+/* the 3D thumb lift (translateZ) paints over the hovering tag — keep premium thumbs flat */
+.ccard.premium.tilt .thumb{transform:none}
 .path-detail{position:relative;background:#12161f;border:1px solid var(--line);border-radius:20px;padding:28px;margin:22px 0 28px}
 .path-detail.premium{border:1.5px solid var(--accent);box-shadow:0 0 0 1px rgba(245,165,36,.3),0 14px 44px rgba(245,165,36,.18)}
 .premium-tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--primary),var(--accent));color:#0b0e14;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:6px 16px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 20px rgba(245,165,36,.45);z-index:3}
