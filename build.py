@@ -21,7 +21,7 @@ IMAGES = {
     "googleads": "media-generation-course-google-ads-0-e743a56a-9e89-4b27-838a-2be0574409e1.jpg",
     "wordpress": "media-generation-course-wordpress-0-02ef6708-45e9-442c-bfe9-f457a3a88509.jpg",
     "seo":       "media-generation-course-seo-0-46c6f662-3cd4-442f-ad8b-67a301686f9f.jpg",
-    "logo":      "spark-wordmark.png",
+    "logo":      "spark-wordmark-spark-a.png",
     "favicon":   "spark-favicon.png",
     "lockup":    "spark-lockup.png",
     "mark":      "spark-mark.png",
