@@ -30,7 +30,6 @@ IMAGES = {
 PAGES = {
     "index":      "SPARK — School of Practical AI & Real Knowledge | Learn. Build. Launch. Earn.",
     "about":      "About SPARK | School of Practical AI & Real Knowledge",
-    "paths":      "Paths | SPARK — Build & Rank an EMD Tool Site or Launch a SaaS",
     "courses":    "Courses | SPARK — School of Practical AI & Real Knowledge",
     "admissions": "Admissions | SPARK — School of Practical AI & Real Knowledge",
     "careers":    "Careers & Mentorship | SPARK",

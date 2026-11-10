@@ -751,6 +751,9 @@ body::after{content:"";position:fixed;inset:0;z-index:300;pointer-events:none;op
 .eb-cover.v2::after{border-color:rgba(245,165,36,.13)}
 .eb-cover svg{position:relative;z-index:1}
 .eb-date{z-index:1}
+
+/* Paths anchor: keep the cards clear of the sticky header on jump */
+#paths{scroll-margin-top:88px}
 </style>
 </head>
 <body><!-- ======= TOPBAR ======= -->
@@ -775,7 +778,7 @@ body::after{content:"";position:fixed;inset:0;z-index:300;pointer-events:none;op
     <nav class="nav-links" aria-label="Primary">
       <a href="index.html" data-nav="index">Home</a>
       <a href="about.html" data-nav="about">About</a>
-      <a href="paths.html" data-nav="paths">Paths</a>
+      <a href="index.html#paths">Paths</a>
       <a href="admissions.html" data-nav="admissions">Admissions</a>
       <a href="careers.html" data-nav="careers">Careers</a>
       <a href="faq.html" data-nav="faq">FAQ</a>
@@ -792,10 +795,10 @@ body::after{content:"";position:fixed;inset:0;z-index:300;pointer-events:none;op
     <span class="eyebrow">Redirect</span>
     <h1>Our Courses Are Now 2 Paths.</h1>
     <p>SPARK has no general courses anymore. There are two end-to-end paths — build &amp; rank an EMD tool site, or build &amp; launch a SaaS with vibe coding. Taking you there now&hellip;</p>
-    <p><a href="paths.html" style="color:var(--primary);font-weight:700">Go to the 2 Paths &rarr;</a></p>
+    <p><a href="index.html#paths" style="color:var(--primary);font-weight:700">Go to the 2 Paths &rarr;</a></p>
   </div>
 </section>
-<script>setTimeout(function(){location.replace('paths.html')},1500)</script>
+<script>setTimeout(function(){location.replace('index.html#paths')},1500)</script>
 <!-- ======= FOOTER ======= -->
 <footer class="site">
   <div class="container">
@@ -809,7 +812,7 @@ body::after{content:"";position:fixed;inset:0;z-index:300;pointer-events:none;op
         <ul class="f-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About SPARK</a></li>
-          <li><a href="paths.html">Paths</a></li>
+          <li><a href="index.html#paths">Paths</a></li>
           <li><a href="admissions.html">Admissions</a></li>
           <li><a href="careers.html">Careers</a></li>
         </ul>
@@ -817,8 +820,8 @@ body::after{content:"";position:fixed;inset:0;z-index:300;pointer-events:none;op
       <div>
         <h4>The 2 Paths</h4>
         <ul class="f-links">
-          <li><a href="paths.html">Path 1 — Build &amp; Rank an EMD Tool Site</a></li>
-          <li><a href="paths.html">Path 2 — Build &amp; Launch a SaaS with Vibe Coding</a></li>
+          <li><a href="index.html#paths">Path 1 — Build &amp; Rank an EMD Tool Site</a></li>
+          <li><a href="index.html#paths">Path 2 — Build &amp; Launch a SaaS with Vibe Coding</a></li>
         </ul>
       </div>
       <div>

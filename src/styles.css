@@ -739,3 +739,6 @@ body::after{content:"";position:fixed;inset:0;z-index:300;pointer-events:none;op
 .eb-cover.v2::after{border-color:rgba(245,165,36,.13)}
 .eb-cover svg{position:relative;z-index:1}
 .eb-date{z-index:1}
+
+/* Paths anchor: keep the cards clear of the sticky header on jump */
+#paths{scroll-margin-top:88px}
