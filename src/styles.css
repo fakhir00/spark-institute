@@ -43,7 +43,7 @@ header.site{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);b
 header.site.scrolled{box-shadow:0 10px 30px -12px rgba(20,10,60,.18)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
 .brand{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
-.brand-logo{height:53px;width:auto;display:block}
+.brand-logo{height:36px;width:auto;display:block}
 .brand .motto{font-size:10px;font-weight:600;letter-spacing:2px;color:#ffb63d;line-height:1.2}
 .brand .mark{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--primary),var(--accent));display:grid;place-items:center;box-shadow:var(--shadow-sm)}
 .brand .mark svg{width:24px;height:24px}
@@ -475,7 +475,7 @@ footer.site{background-image:linear-gradient(#100c24,#100c24),linear-gradient(90
   .hero{padding:24px 0 24px}
   .nav{height:64px}
   .brand .mark{width:38px;height:38px}
-  .brand-logo{height:44px}
+  .brand-logo{height:30px}
   .brand .name{font-size:21px}
   .hero-badge{margin-bottom:14px}
   .hero h1{font-size:40px;margin-bottom:12px}
