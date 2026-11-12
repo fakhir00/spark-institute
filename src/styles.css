@@ -742,3 +742,9 @@ body::after{content:"";position:fixed;inset:0;z-index:300;pointer-events:none;op
 
 /* Paths anchor: keep the cards clear of the sticky header on jump */
 #paths{scroll-margin-top:88px}
+
+/* ---------- footer social ---------- */
+.f-social{display:flex;gap:12px;margin-top:18px}
+.f-social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid #1c2230;border-radius:50%;background:#12161f;transition:border-color .2s,background .2s,transform .2s}
+.f-social a svg{width:19px;height:19px;fill:#f5a524}
+.f-social a:hover{border-color:#f5a524;background:rgba(245,165,36,.1);transform:translateY(-2px)}
